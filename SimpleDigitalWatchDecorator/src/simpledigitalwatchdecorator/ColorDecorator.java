@@ -10,16 +10,17 @@ package simpledigitalwatchdecorator;
  */
 public class ColorDecorator extends ClockDecorator {
 
-    public ColorDecorator(Clock specialClock) {
-        super(specialClock);
-    }
+  public ColorDecorator (Clock specialClock) {
+    super(specialClock);
+  }
 
-    public void showRoom() {
-        specialClock.addColors();
-        specialClock.showClock();
-    }
+  @Override
+  public void showClock() {
+    addColors();
+    specialClock.showClock();
+  }
 
-    private void addColors() {
-        System.out.println("Change color!");
-    }
+  private void addColors() {
+    System.out.println("Red clock");
+  }
 }

@@ -8,7 +8,7 @@ package simpledigitalwatchdecorator;
  *
  * @author EdwinOtten
  */
-public class ClockDecorator implements Clock {
+abstract class ClockDecorator implements Clock {
     
     protected Clock specialClock;
     
