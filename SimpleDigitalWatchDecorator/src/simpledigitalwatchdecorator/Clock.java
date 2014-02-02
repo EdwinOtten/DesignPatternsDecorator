@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import javax.swing.JTextPane;
 
 /**
  *
  * @author EdwinOtten
  */
 public interface Clock {
-    public void showClock();
-
+    public void showClock(JTextPane jTextPane);
 }

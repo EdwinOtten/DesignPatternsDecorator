@@ -1,8 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import java.awt.Color;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -15,12 +14,15 @@ public class ColorDecorator extends ClockDecorator {
   }
 
   @Override
-  public void showClock() {
-    addColors();
-    specialClock.showClock();
+  public void showClock(JTextPane jTextPane) {
+    addColors(jTextPane);
+    specialClock.showClock(jTextPane);
   }
 
-  private void addColors() {
-    System.out.println("Red clock");
+  private void addColors(JTextPane jTextPane) {
+    
+        jTextPane.setBackground(Color.BLACK);
+        jTextPane.setForeground(Color.GREEN);
+    
   }
 }

@@ -1,8 +1,6 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import javax.swing.JTextPane;
 
 /**
  *
@@ -13,12 +11,13 @@ abstract class ClockDecorator implements Clock {
     protected Clock specialClock;
     
     public ClockDecorator (Clock specialClock) {
-        this.specialClock= specialClock;
+        this.specialClock = specialClock;
     }
 
     @Override
-    public void showClock() {
-        specialClock.showClock();
+    public void showClock(JTextPane jTextPane) {
+        specialClock.showClock(jTextPane);
+        jTextPane.repaint();
     }
     
 }

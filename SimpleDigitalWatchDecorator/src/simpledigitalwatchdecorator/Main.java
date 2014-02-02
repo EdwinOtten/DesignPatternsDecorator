@@ -1,20 +1,36 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author EdwinOtten
  */
 public class Main {
-
+        
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Clock clock = new ColorDecorator(new TimezoneDecorator(new SimpleClock()));
-        clock.showClock();
+        
+        // Create the view
+        ClockView view = new ClockView();
+        
+        // Netbeans doesn't like sleep() in a loop, so we do it in a try-catch block
+        try {
+            for (int i = 0; i < 1000; i++) {
+                    // Pause for 1 second
+                    Thread.sleep(1000);
+                    // update the view
+                    System.out.println("UPDATE");
+                    view.update();
+            }   
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
     }
 }

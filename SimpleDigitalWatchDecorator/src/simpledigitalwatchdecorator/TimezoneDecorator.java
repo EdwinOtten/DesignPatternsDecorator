@@ -1,8 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+import javax.swing.JTextPane;
 
 /**
  *
@@ -10,17 +13,19 @@ package simpledigitalwatchdecorator;
  */
 public class TimezoneDecorator extends ClockDecorator {
 
-  public TimezoneDecorator (Clock specialClock) {
-    super(specialClock);
-  }
+    public TimezoneDecorator(Clock specialClock) {
+        super(specialClock);
+    }
 
-  @Override
-  public void showClock() {
-    changeTimezone();
-    specialClock.showClock();
-  }
-
-  private void changeTimezone() {
-    System.out.println("Amsterdam clock");
-  }
+    @Override
+    public void showClock(JTextPane jTextPane) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeZone(TimeZone.getTimeZone("UTC"));
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        dateFormat.format(cal.getTime());
+        
+        jTextPane.setText(dateFormat.toString());
+        
+        specialClock.showClock(jTextPane);
+    }
 }

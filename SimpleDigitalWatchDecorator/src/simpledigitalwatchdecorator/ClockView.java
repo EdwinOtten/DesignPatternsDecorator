@@ -1,8 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package simpledigitalwatchdecorator;
+
+import java.awt.event.ItemEvent;
+import java.util.ArrayList;
 
 /**
  *
@@ -10,11 +9,26 @@ package simpledigitalwatchdecorator;
  */
 public class ClockView extends javax.swing.JFrame {
 
+    private Clock clock1;
+    private Clock clock2;
+    private Clock clock3;
+
     /**
      * Creates new form ClockView
      */
-    public ClockView() {
+    ClockView() {
+        // Create 3 basic clocks
+        clock1 = new SimpleClock();
+        clock2 = new SimpleClock();
+        clock3 = new SimpleClock();
         initComponents();
+        this.setVisible(true);
+    }
+
+    public void update() {
+        clock1.showClock(this.jTextPane1);
+        clock2.showClock(this.jTextPane2);
+        clock3.showClock(this.jTextPane3);
     }
 
     /**
@@ -50,13 +64,22 @@ public class ClockView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextPane1.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
+        jTextPane1.setText("00:00:00");
         jScrollPane1.setViewportView(jTextPane1);
 
+        jTextPane2.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
+        jTextPane2.setText("00:00:00");
         jScrollPane2.setViewportView(jTextPane2);
 
+        jTextPane3.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
+        jTextPane3.setText("00:00:00");
         jScrollPane3.setViewportView(jTextPane3);
 
         buttonGroup1.add(jRadioButton1);
@@ -119,6 +142,27 @@ public class ClockView extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Stad");
 
+        jCheckBox1.setText("1337");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.setText("1337");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox3.setText("1337");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,11 +171,12 @@ public class ClockView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton4)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton2)
                     .addComponent(jRadioButton1)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jCheckBox1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +184,8 @@ public class ClockView extends javax.swing.JFrame {
                     .addComponent(jRadioButton6)
                     .addComponent(jRadioButton7)
                     .addComponent(jRadioButton8)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jCheckBox3))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
@@ -147,7 +193,8 @@ public class ClockView extends javax.swing.JFrame {
                     .addComponent(jRadioButton10)
                     .addComponent(jRadioButton11)
                     .addComponent(jRadioButton12)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -189,7 +236,12 @@ public class ClockView extends javax.swing.JFrame {
                         .addComponent(jRadioButton11)
                         .addGap(18, 18, 18)
                         .addComponent(jRadioButton12)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox3))
+                .addContainerGap())
         );
 
         pack();
@@ -207,44 +259,37 @@ public class ClockView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton11ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClockView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClockView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClockView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClockView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        if (jCheckBox2.isSelected() == true) {
+            clock2 = new ColorDecorator(new SimpleClock());
+        } else {
+            clock2 = new SimpleClock();
         }
-        //</editor-fold>
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ClockView().setVisible(true);
-            }
-        });
-    }
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        if (jCheckBox1.isSelected() == true) {
+            clock1 = new ColorDecorator(new SimpleClock());
+        } else {
+            clock1 = new SimpleClock();
+        }
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        if (jCheckBox3.isSelected() == true) {
+            clock3 = new ColorDecorator(new SimpleClock());
+        } else {
+            clock3 = new SimpleClock();
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -35,11 +35,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
-                  <Component id="jRadioButton4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton3" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jRadioButton4" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -49,6 +50,7 @@
                   <Component id="jRadioButton7" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton8" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -58,6 +60,7 @@
                   <Component id="jRadioButton11" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jRadioButton12" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="170" max="-2" attributes="0"/>
+                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -108,7 +111,13 @@
                       <Component id="jRadioButton12" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="47" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,6 +131,12 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="jTextPane1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="32" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="00:00:00"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -133,6 +148,12 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="jTextPane2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="32" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="00:00:00"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -144,6 +165,12 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
         <Component class="javax.swing.JTextPane" name="jTextPane3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="32" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="00:00:00"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
@@ -275,6 +302,30 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Stad"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1337"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1337"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="1337"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox3ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
