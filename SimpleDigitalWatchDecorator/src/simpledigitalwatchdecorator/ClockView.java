@@ -28,8 +28,8 @@ public class ClockView extends javax.swing.JFrame {
 
     public void update() {
         clock1.showClock(this.jTextPane1);
-        clock2.showClock(this.jTextPane2);
-        clock3.showClock(this.jTextPane3);
+        //clock2.showClock(this.jTextPane2);
+        //clock3.showClock(this.jTextPane3);
     }
 
     /**
@@ -272,34 +272,34 @@ public class ClockView extends javax.swing.JFrame {
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if (jCheckBox2.isSelected() == true) {
-            clock2 = new LeetDecorator(new SimpleClock());
+            clock2 = new LeetDecorator(clock2);
         } else {
-            clock2 = new WhiteDecorator(new SimpleClock());
+            clock2 = new WhiteDecorator(clock2);
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected() == true) {
-            clock1 = new LeetDecorator(new SimpleClock());
+            clock1 = new LeetDecorator(clock1);
         } else {
-            clock1 = new WhiteDecorator(new SimpleClock());
+            clock1 = new WhiteDecorator(clock1);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if (jCheckBox3.isSelected() == true) {
-            clock3 = new LeetDecorator(new SimpleClock());
+            clock3 = new LeetDecorator(clock3);
         } else {
-            clock3 = new WhiteDecorator(new SimpleClock());
+            clock3 = new WhiteDecorator(clock3);
         }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        clock1 = new TimezoneDecorator(new SimpleClock());
+        clock1 = new TimezoneDecorator(clock1);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        clock1 = new TimezoneDecorator(new SimpleClock());
+        clock1 = new TimezoneDecorator(clock1);
     } 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

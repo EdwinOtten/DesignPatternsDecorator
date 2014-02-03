@@ -19,13 +19,12 @@ public class TimezoneDecorator extends ClockDecorator {
 
     @Override
     public void showClock(JTextPane jTextPane) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTimeZone(TimeZone.getTimeZone("UTC"));
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        dateFormat.format(cal.getTime());
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Calcutta"));
+        String time = dateFormat.format(new Date());
         
-        jTextPane.setText(dateFormat.toString());
-        System.out.println("set to UTC.");
+        jTextPane.setText(time);
+        System.out.println("set by TimezoneDecorator: "+time);
         
         specialClock.showClock(jTextPane);
     }
