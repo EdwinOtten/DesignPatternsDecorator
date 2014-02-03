@@ -2,7 +2,6 @@ package simpledigitalwatchdecorator;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 import javax.swing.JTextPane;
@@ -11,20 +10,19 @@ import javax.swing.JTextPane;
  *
  * @author EdwinOtten
  */
-public class TimezoneDecorator extends ClockDecorator {
+public class LondonDecorator extends ClockDecorator {
 
-    public TimezoneDecorator(Clock specialClock) {
+    public LondonDecorator(Clock specialClock) {
         super(specialClock);
     }
 
     @Override
     public void showClock(JTextPane jTextPane) {
-        Calendar cal = Calendar.getInstance();
-        cal.setTimeZone(TimeZone.getTimeZone("UTC"));
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        dateFormat.format(cal.getTime());
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/London"));
+        String time = dateFormat.format(new Date());
         
-        jTextPane.setText(dateFormat.toString());
+        jTextPane.setText(time);
         
         specialClock.showClock(jTextPane);
     }

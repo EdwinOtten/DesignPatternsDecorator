@@ -17,7 +17,6 @@ abstract class ClockDecorator implements Clock {
     @Override
     public void showClock(JTextPane jTextPane) {
         specialClock.showClock(jTextPane);
-        jTextPane.repaint();
     }
     
 }

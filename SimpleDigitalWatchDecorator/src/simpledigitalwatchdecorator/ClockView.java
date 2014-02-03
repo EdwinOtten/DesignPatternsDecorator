@@ -1,5 +1,6 @@
 package simpledigitalwatchdecorator;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 
@@ -27,8 +28,8 @@ public class ClockView extends javax.swing.JFrame {
 
     public void update() {
         clock1.showClock(this.jTextPane1);
-        clock2.showClock(this.jTextPane2);
-        clock3.showClock(this.jTextPane3);
+        //clock2.showClock(this.jTextPane2);
+        //clock3.showClock(this.jTextPane3);
     }
 
     /**
@@ -84,9 +85,19 @@ public class ClockView extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("Londen");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("Amsterdam");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("New York");
@@ -261,28 +272,36 @@ public class ClockView extends javax.swing.JFrame {
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if (jCheckBox2.isSelected() == true) {
-            clock2 = new ColorDecorator(new SimpleClock());
+            clock2 = new LeetDecorator(new SimpleClock());
         } else {
-            clock2 = new SimpleClock();
+            clock2 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected() == true) {
-            clock1 = new ColorDecorator(new SimpleClock());
+            clock1 = new LeetDecorator(new SimpleClock());
         } else {
-            clock1 = new SimpleClock();
+            clock1 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if (jCheckBox3.isSelected() == true) {
-            clock3 = new ColorDecorator(new SimpleClock());
+            clock3 = new LeetDecorator(new SimpleClock());
         } else {
-            clock3 = new SimpleClock();
+            clock3 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        clock1 = new LondonDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+//
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        clock1 = new AmsterdamDecorator(new SimpleClock());
+    } 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
