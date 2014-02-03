@@ -1,9 +1,5 @@
 package simpledigitalwatchdecorator;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ItemEvent;
-import java.util.ArrayList;
-
 /**
  *
  * @author EdwinOtten
@@ -28,8 +24,8 @@ public class ClockView extends javax.swing.JFrame {
 
     public void update() {
         clock1.showClock(this.jTextPane1);
-        //clock2.showClock(this.jTextPane2);
-        //clock3.showClock(this.jTextPane3);
+        clock2.showClock(this.jTextPane2);
+        clock3.showClock(this.jTextPane3);
     }
 
     /**
@@ -109,12 +105,27 @@ public class ClockView extends javax.swing.JFrame {
 
         buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("Darwin");
+        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton4ActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(jRadioButton5);
         jRadioButton5.setText("Londen");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(jRadioButton6);
         jRadioButton6.setText("Amsterdam");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
 
         buttonGroup2.add(jRadioButton7);
         jRadioButton7.setText("New York");
@@ -126,12 +137,27 @@ public class ClockView extends javax.swing.JFrame {
 
         buttonGroup2.add(jRadioButton8);
         jRadioButton8.setText("Darwin");
+        jRadioButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton8ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton9);
         jRadioButton9.setText("Londen");
+        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton9ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton10);
         jRadioButton10.setText("Amsterdam");
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
 
         buttonGroup3.add(jRadioButton11);
         jRadioButton11.setText("New York");
@@ -143,6 +169,11 @@ public class ClockView extends javax.swing.JFrame {
 
         buttonGroup3.add(jRadioButton12);
         jRadioButton12.setText("Darwin");
+        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton12ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Stad");
@@ -190,22 +221,22 @@ public class ClockView extends javax.swing.JFrame {
                     .addComponent(jCheckBox1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jRadioButton5)
                     .addComponent(jRadioButton6)
                     .addComponent(jRadioButton7)
                     .addComponent(jRadioButton8)
                     .addComponent(jLabel2)
-                    .addComponent(jCheckBox3))
+                    .addComponent(jCheckBox3)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
                     .addComponent(jRadioButton9)
                     .addComponent(jRadioButton10)
                     .addComponent(jRadioButton11)
                     .addComponent(jRadioButton12)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox2))
+                    .addComponent(jCheckBox2)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -213,9 +244,9 @@ public class ClockView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -259,15 +290,15 @@ public class ClockView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
+        clock1 = new NewYorkDecorator(new SimpleClock());
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
-        // TODO add your handling code here:
+        clock2 = new NewYorkDecorator(new SimpleClock());
     }//GEN-LAST:event_jRadioButton7ActionPerformed
 
     private void jRadioButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton11ActionPerformed
-        // TODO add your handling code here:
+        clock3 = new NewYorkDecorator(new SimpleClock());
     }//GEN-LAST:event_jRadioButton11ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
@@ -297,6 +328,34 @@ public class ClockView extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         clock1 = new LondonDecorator(new SimpleClock());
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+        clock1 = new DarwinDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton4ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        clock2 = new LondonDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        clock3 = new LondonDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void jRadioButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton8ActionPerformed
+        clock2 = new DarwinDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton8ActionPerformed
+
+    private void jRadioButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton12ActionPerformed
+        clock3 = new DarwinDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton12ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        clock2 = new AmsterdamDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+        clock3 = new AmsterdamDecorator(new SimpleClock());
+    }//GEN-LAST:event_jRadioButton10ActionPerformed
 //
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                              
         clock1 = new AmsterdamDecorator(new SimpleClock());
