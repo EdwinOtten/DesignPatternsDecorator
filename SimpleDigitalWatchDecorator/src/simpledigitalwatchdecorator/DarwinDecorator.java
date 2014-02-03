@@ -19,7 +19,7 @@ public class DarwinDecorator extends ClockDecorator {
     @Override
     public void showClock(JTextPane jTextPane) {
         DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/London"));
+        dateFormat.setTimeZone(TimeZone.getTimeZone("Australia/Darwin"));
         String time = dateFormat.format(new Date());
         
         jTextPane.setText(time);
