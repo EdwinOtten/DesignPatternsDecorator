@@ -20,10 +20,7 @@ public class LeetDecorator extends ClockDecorator {
     }
 
     private void addColors(JTextPane jTextPane) {
-        System.out.println("1337 colors added");
         jTextPane.setBackground(Color.BLACK);
         jTextPane.setForeground(Color.GREEN);
-
-
     }
 }

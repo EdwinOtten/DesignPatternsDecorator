@@ -20,11 +20,7 @@ public class WhiteDecorator extends ClockDecorator {
     }
 
     private void addColors(JTextPane jTextPane) {
-        System.out.println("white colors added");
-
         jTextPane.setBackground(Color.WHITE);
         jTextPane.setForeground(Color.BLACK);
-
-
     }
 }

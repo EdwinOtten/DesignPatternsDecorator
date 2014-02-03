@@ -20,11 +20,10 @@ public class Main {
         
         // Netbeans doesn't like sleep() in a loop, so we do it in a try-catch block
         try {
-            for (int i = 0; i < 1000; i++) {
+            for (int i = 0; i < 999999999; i++) {
                     // Pause for 1 second
                     Thread.sleep(1000);
                     // update the view
-                    System.out.println("UPDATE");
                     view.update();
             }   
         } catch (InterruptedException ex) {
