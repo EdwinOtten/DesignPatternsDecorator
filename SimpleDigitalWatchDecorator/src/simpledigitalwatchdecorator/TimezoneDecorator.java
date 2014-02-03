@@ -25,6 +25,7 @@ public class TimezoneDecorator extends ClockDecorator {
         dateFormat.format(cal.getTime());
         
         jTextPane.setText(dateFormat.toString());
+        System.out.println("set to UTC.");
         
         specialClock.showClock(jTextPane);
     }
