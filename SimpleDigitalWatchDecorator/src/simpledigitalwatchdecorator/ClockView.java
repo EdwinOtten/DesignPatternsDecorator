@@ -222,21 +222,21 @@ public class ClockView extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton6)
                     .addComponent(jRadioButton7)
                     .addComponent(jRadioButton8)
                     .addComponent(jLabel2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jCheckBox2))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jRadioButton9)
                     .addComponent(jRadioButton10)
                     .addComponent(jRadioButton11)
                     .addComponent(jRadioButton12)
-                    .addComponent(jCheckBox2)
                     .addComponent(jLabel3)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -280,9 +280,9 @@ public class ClockView extends javax.swing.JFrame {
                         .addComponent(jRadioButton12)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
                     .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox3))
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox2))
                 .addContainerGap())
         );
 
@@ -311,9 +311,9 @@ public class ClockView extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected() == true) {
-            clock1 = new LeetDecorator(new SimpleClock());
+            clock1 = new LeetDecorator(clock1);
         } else {
-            clock1 = new WhiteDecorator(new SimpleClock());
+            clock1 = new WhiteDecorator(clock1);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 

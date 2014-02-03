@@ -15,8 +15,8 @@ public class WhiteDecorator extends ClockDecorator {
 
     @Override
     public void showClock(JTextPane jTextPane) {
-        addColors(jTextPane);
         specialClock.showClock(jTextPane);
+        addColors(jTextPane);
     }
 
     private void addColors(JTextPane jTextPane) {
