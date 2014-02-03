@@ -272,25 +272,25 @@ public class ClockView extends javax.swing.JFrame {
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
         if (jCheckBox2.isSelected() == true) {
-            clock2 = new ColorDecorator(new SimpleClock());
+            clock2 = new LeetDecorator(new SimpleClock());
         } else {
-            clock2 = new SimpleClock();
+            clock2 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected() == true) {
-            clock1 = new ColorDecorator(new SimpleClock());
+            clock1 = new LeetDecorator(new SimpleClock());
         } else {
-            clock1 = new SimpleClock();
+            clock1 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         if (jCheckBox3.isSelected() == true) {
-            clock3 = new ColorDecorator(new SimpleClock());
+            clock3 = new LeetDecorator(new SimpleClock());
         } else {
-            clock3 = new SimpleClock();
+            clock3 = new WhiteDecorator(new SimpleClock());
         }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
